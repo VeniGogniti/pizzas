@@ -4,6 +4,7 @@
 #include "Pizzeria.hpp"
 #include "Margherita.hpp"
 #include "Funghi.hpp"
+#include "Pizza.hpp"
 
 using namespace std;
 using namespace ::testing;
