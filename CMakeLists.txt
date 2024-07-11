@@ -14,9 +14,6 @@ FetchContent_MakeAvailable(googletest)
 
 add_library(${PROJECT_NAME}-lib STATIC ${SRC_LIST})
 add_executable(${PROJECT_NAME} src/main.cpp)
-
-find_package(Threads REQUIRED)
-target_link_libraries(${PROJECT_NAME}-lib Threads::Threads)
 target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
 
 link_libraries(gmock)
