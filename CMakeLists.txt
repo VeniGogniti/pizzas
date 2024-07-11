@@ -12,13 +12,11 @@ set (gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 include_directories(${CMAKE_SOURCE_DIR}/src)
-find_package(Threads REQUIRED)
 
 link_libraries(gmock)
 add_library(${PROJECT_NAME}-lib STATIC ${SRC_LIST} ${TEST_SRC_LIST})
-add_executable(${PROJECT_NAME} src/main.cpp ${CMAKE_THREAD_LIBS_INIT})
+add_executable(${PROJECT_NAME} src/main.cpp)
 target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
-target_link_libraries(${PROJECT_NAME}-lib Threads::Threads)
 
 add_executable(${PROJECT_NAME}-ut test/PizzeriaTest.cpp)
 target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib)

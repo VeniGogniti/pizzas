@@ -1,4 +1,4 @@
-#include "../../src/Pizza.hpp"
+#include "Pizza.hpp"
 #include "gmock/gmock.h"
 
 struct PizzaDummy : public Pizza
